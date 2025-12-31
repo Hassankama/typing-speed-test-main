@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Typing Speed Test</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="comtainer">
+<div class="header">
+<img src="assets/images/logo-large.svg" alt="">
+  <div class="WPM">
+    <img src="assets/images/icon-personal-best.svg" alt="">
+    <p> Personal best: <span id="best">0</span> <span id="white">WPM</span></p>
+  </div>
+</div>
+
+
+
+
+  <div class="calcus">
+    <div class="percenage">
+          <div class="text">
+         <p>WPM: <span id="WPM">0</span></p>
+          </div>
+        
+          <div class="Accuracy">
+         <p>Accuracy: <span id="Accuracy">0%</span></p>
+
+          </div>
+          <div class="Time">
+         <p>Time: <span id="Time">0:00</span></p>
+
+          </div>
+    </div>
+
+    
+    <div class="choices">
+      <div class="diff">
+    <p>Difficulty:</p>
+
+    <label class="choice">
+      <input type="radio" name="difficulty" value="Easy">
+      <span>Easy</span>
+    </label>
+
+    <label class="choice">
+      <input type="radio" name="difficulty" value="Medium">
+      <span>Medium</span>
+    </label>
+
+    <label class="choice">
+      <input type="radio" name="difficulty" value="Hard">
+      <span>Hard</span>
+    </label>
+  </div>
+      <div class="diff">
+         <p>Mode:</p>
+
+    <label class="choice">
+      <input type="radio" name="mode" value="Timed">
+      <span>Timed (60s)</span>
+    </label>
+
+    <label class="choice">
+      <input type="radio" name="mode" value="Passage">
+      <span>Passage</span>
+    </label>
+      </div>
+    </div>
+
+
+  </div>
+
+        <div id="game" tabindex="0">
+            <div id="words"></div>
+            <div id="cursor"></div>
+            <div id="focus-error">Click here to focus</div>
+        </div>
+
+<div class="end">
+    <div class="restart">
+   <p>Restart Test</p> <img src="assets/images/icon-restart.svg" alt="">
+  </div>
+</div>
+
+  </div>
+
+
+
+
+
+  <script src="js.js"></script>
+</body>
+</html>
+
+
