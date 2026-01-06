@@ -7,7 +7,7 @@ fetch('data.json')
 
 let words = "the sun rose over the quiet town. Birds sang in the trees as people woke up and started their day. It was going to be a warm and sunny morning.".split(" ");
 let wordsCount = words.length;
-const gameTime = 10 * 1000;
+const gameTime = 60 * 1000;
 window.timer = null;
 window.gameStart = null;
 let gameEnded = false;
