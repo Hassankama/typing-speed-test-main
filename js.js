@@ -7,14 +7,24 @@ fetch('data.json')
 
 let words = "the sun rose over the quiet town. Birds sang in the trees as people woke up and started their day. It was going to be a warm and sunny morning.".split(" ");
 let wordsCount = words.length;
-const gameTime = 60 * 1000;
+const gameTime = 10 * 1000;
 window.timer = null;
 window.gameStart = null;
 let gameEnded = false;
-
 const WPM=document.getElementById('WPM');
 const Accuracy=document.getElementById('Accuracy');
 const best=document.getElementById('best')
+const finalWPM=document.getElementById('finalWPM')
+const finalac=document.getElementById('finalac')
+const chars=document.getElementById('chars')
+const r=document.getElementById('r')
+const finish=document.getElementById('finish')
+const finishp=document.getElementById('finishp')
+const bimg=document.getElementById('bimg')
+
+
+
+
 
 
 let minutes=0;
@@ -122,11 +132,37 @@ function gameOver() {
   Accuracy.innerText = Math.round(accuracy) + '%';
   WPM.innerText = wpm;
 
-  Best = Math.max(wpm, Best);
+ const isNewRecord = wpm > Best;
+
+if (isNewRecord) {
+  Best = wpm;
   localStorage.setItem('bestWPM', Best);
+
+  bimg.src = 'assets/images/icon-new-pb.svg';
+  finish.innerText = "High Score Smashed";
+  finishp.innerText = "You're getting faster. That was incredible typing";
+} else {
+  finish.innerText = "Test Completed";
+  finishp.innerText = "Great job! Keep practicing to improve your speed.";
+}
+
+best.innerText = `${Best} WPM`;
+
+
+
+
   best.innerText = `${Best} WPM`;
 
+finalWPM.innerText=wpm;
+finalac.innerText = Math.round(accuracy) + '%';
+
+chars.innerText=right;
+r.innerText=wrong;
+
+
   document.getElementById('game').classList.add('disabled');
+  document.querySelector('.congrats').style.display = 'flex';
+
 }
 
 
@@ -248,6 +284,11 @@ if (nextLetter) {
 
 document.querySelector('.restart').addEventListener('click', function() {
     restartGame();
+});
+
+document.querySelector('.restarting').addEventListener('click', () => {
+  restartGame();
+  document.querySelector('.congrats').style.display = 'none';
 });
 
 function restartGame() {
